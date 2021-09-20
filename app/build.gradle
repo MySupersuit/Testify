@@ -6,6 +6,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        test {
+            storeFile file('C:\\Users\\ASUS\\AndroidStudioProjects\\keystores\\upload-keystore.jks')
+            storePassword 'encyclopedia8482'
+            keyAlias 'test'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -17,6 +25,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.test
     }
 
     lintOptions {
